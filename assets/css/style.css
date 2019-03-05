@@ -1,0 +1,510 @@
+@font-face {
+    font-family: 'Audiowide';
+    src: url(../fonts/Audiowide-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url(../fonts/Comfortaa-Regular.ttf);
+    src: url(../fonts/Comfortaa-Light.ttf);
+    src: url(../fonts/Comfortaa-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Sacramento';
+    src: url(../fonts/Sacramento-Regular.ttf);
+}
+
+body {
+    font-family: 'Comfortaa';
+    padding: 0;
+    margin: 0;
+    background: url(../imgs/bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 45px;
+    font-family: 'Audiowide';
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.6);
+}
+
+.main-text {
+    text-align: center;
+    font-family: 'Sacramento';
+    font-size: 80px;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+}
+
+#clock {
+    display: flex;
+    margin: 0 auto;
+    transition: all .5s;
+    animation: loading 3s ease-in-out;
+}
+
+#clock div {
+    position: relative;
+    width: 90px;
+    padding: 25px 20px;
+    margin: 0 5px;
+    background: #262626;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 20px rgba(255, 255, 255, 0.6);
+}
+
+#clock div:last-child {
+    background: rgb(68, 175, 218);
+}
+
+#clock div::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#clock div span {
+    display: block;
+    text-align: center;
+}
+
+#clock div span:nth-child(1) {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: -15px;
+}
+
+#clock div span:nth-child(2) {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+
+.s {
+    color: #000 !important;
+}
+
+.social {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.863);
+    display: none;
+}
+
+.social a .fa {
+    margin-top: 250px !important;
+    color: #fff;
+    border-radius: 10px;
+    margin: 0px 15px;
+    height: 80px;
+    width: 80px;
+    font-size: 40px !important;
+    border: 1px solid #fff;
+    line-height: 80px;
+    transition: all .5s;
+}
+
+.social a .fa:hover {
+    background: rgb(68, 175, 218);
+    border-radius: 100px;
+    border: 1px solid rgb(68, 175, 218);
+}
+
+.share {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgb(68, 175, 218);
+    padding: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 25px !important;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    transition: all .5s;
+}
+
+.fa {
+    margin-left: 2px;
+}
+
+.msg {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    background: rgb(68, 175, 218);
+    padding: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 25px !important;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    transition: all .5s;
+}
+
+.close-1 {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgb(68, 175, 218);
+    padding: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 25px !important;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    transition: all .5s;
+    z-index: 99;
+}
+
+.close-2 {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: rgb(68, 175, 218);
+    padding: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 25px !important;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.6);
+    transition: all .5s;
+    z-index: 99;
+}
+
+.share:hover,
+.msg:hover,
+.close-1:hover,
+.close-2:hover {
+    transform: scale(1.2);
+}
+
+@keyframes loading {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.contact {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.863);
+    height: 100vh;
+    width: 100%;
+    display: none;
+}
+
+.con-overly {
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.801);
+    display: inline-block;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 1px 20px rgba(255, 255, 255, 0.6);
+}
+
+.input {
+    margin: 30px auto;
+    width: 400px;
+    display: block;
+    padding: 17px;
+    background: transparent;
+    border: 1px solid #fff;
+    border-radius: 1px;
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Comfortaa';
+
+}
+
+.input:focus {
+    outline: 1px solid rgb(68, 175, 218);
+    border: none;
+}
+
+::placeholder {
+    font-family: 'Comfortaa';
+    color: #fff;
+}
+textarea{
+    font-family: 'Comfortaa';
+}
+
+.btn-submit {
+    padding: 20px 40px;
+    background: rgb(68, 175, 218);
+    color: #fff;
+    text-decoration: none !important;
+    font-size: 17px;
+    margin-top: 15px;
+    display: inline-block;
+    transition: all .5s;
+}
+
+.btn-submit:hover {
+    transform: scale(1.1);
+}
+@media (max-width:900px){
+    .main-text {
+        font-size: 60px;
+    }
+    #clock div {
+        width: 70px;
+        padding: 20px 15px;
+    }
+    .share {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg {
+        bottom: 20px;
+        left: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg .fa {
+        margin-left: 0px;
+    }
+}
+
+@media (max-width:768px) {
+    .main-text {
+        font-size: 60px;
+    }
+    #clock div {
+        width: 70px;
+        padding: 20px 15px;
+    }
+    .con-overly {
+        margin-top: 50px;
+        padding: 30px;
+    }
+    .input {
+        margin: 30px auto;
+        width: 300px;
+        padding: 15px;
+        font-size: 18px;
+    }
+    .btn-submit {
+        padding: 15px 30px;
+        background: rgb(68, 175, 218);
+        color: #fff;
+        text-decoration: none !important;
+        font-size: 15px;
+        margin-top: 15px;
+        display: inline-block;
+        transition: all .5s;
+    }
+  
+}
+
+@media (max-width:590px) {
+    .main-text {
+        font-size: 50px;
+    }
+    #clock div {
+        width: 50px;
+        padding: 15px 15px;
+    }
+    .con-overly {
+        margin-top: 50px;
+        padding: 30px;
+    }
+    .input {
+        margin: 30px auto;
+        width: 240px;
+        padding: 15px;
+        font-size: 15px;
+    }
+    #clock div span:nth-child(1) {
+        font-size: 38px;
+        font-weight: bold;
+        margin-top: -5px;
+    }
+    #clock div span:nth-child(2) {
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 25px;
+    }
+    .close-1 {
+        top: 20px;
+        right: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .close-2 {
+        top: 20px;
+        left: 20px;
+        padding: 10px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .share {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg {
+        bottom: 20px;
+        left: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg .fa {
+        margin-left: 0px;
+    }
+    .social a .fa {
+        margin-top: 250px !important;
+        margin: 0px 5px;
+        height: 60px;
+        width: 60px;
+        font-size: 30px !important;
+        line-height: 60px;
+    }
+}
+@media (max-width:490px) {
+    .main-text {
+        font-size: 35px;
+    
+    }
+    #clock div {
+        width: 40px;
+        padding: 10px 10px;
+        margin: 0 3px;
+    }
+    .con-overly {
+        margin-top: 50px;
+        padding: 30px;
+    }
+    .input {
+        margin: 30px auto;
+        width: 240px;
+        padding: 15px;
+        font-size: 15px;
+    }
+    #clock div span:nth-child(1) {
+        font-size: 32px;
+        font-weight: bold;
+        margin-top: -5px;
+    }
+    #clock div span:nth-child(2) {
+        font-size: 9px;
+        font-weight: normal;
+        margin-top: 25px;
+    }
+    .close-1 {
+        top: 20px;
+        right: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .close-2 {
+        top: 20px;
+        left: 20px;
+        padding: 10px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .share {
+        bottom: 20px;
+        right: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg {
+        bottom: 20px;
+        left: 20px;
+        padding: 15px;
+        height: 20px;
+        width: 20px;
+        font-size: 20px !important;
+        line-height: 20px;
+    }
+    .msg .fa {
+        margin-left: 0px;   
+    }
+    .social a .fa {
+        margin-top: 250px !important;
+        margin: 0px 5px;
+        height: 40px;
+        width: 40px;
+        font-size: 20px !important;
+        line-height: 40px;
+    }
+    .con-overly {
+        margin-top: 80px;
+        padding: 30px;
+    }
+}
+

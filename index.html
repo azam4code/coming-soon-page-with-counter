@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Web Techo | We are coming soon!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="assets/font-awesome/font-awesome-4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/animate.css">
+
+</head>
+
+<body>
+  <h1 class="logo">Web Techo</h1>
+  <div class="center">
+    <br><br><br><br>
+    <h1 class="main-text wow bounceInUp">We Are Coming Soon!</h1>
+    <div id="clock"></div>
+
+
+  </div>
+  <div class="share">
+    <i class="fa fa-share-alt "></i>
+  </div>
+
+  <div class="msg">
+    <i class="fa fa-envelope"></i>
+  </div>
+
+
+
+  <div class="social">
+    <a href="#"><i class="fa fa-facebook wow bounceInUp"></i></a>
+    <a href="#"><i class="fa fa-twitter wow bounceInUp" data-wow-duration="1.4s" data-wow-delay="1s"></i></a>
+    <a href="#"><i class="fa fa-instagram wow bounceInUp" data-wow-duration="1.6s" data-wow-delay="1.2s"></i></a>
+    <a href="#"><i class="fa fa-youtube-play wow bounceInUp" data-wow-duration="1.8s" data-wow-delay="1.3s"></i></a>
+    <a href="#"><i class="fa fa-linkedin wow bounceInUp " data-wow-duration="2s" data-wow-delay="1.4s"></i></a>
+
+    <div class="close-1">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="con-overly">
+      <input type="text" class="input" placeholder="Enter Your Email">
+      <input type="text" class="input" placeholder="Enter Your Name">
+      <textarea name="" id="" cols="30" rows="5" class="input" placeholder="Enter Your Message"></textarea>
+      <a href="#" class="btn-submit"> Submit</a>
+    </div>
+    <div class="close-2">
+      <i class="fa fa-times"></i>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery-3.3.1.min.js"></script>
+  <script src="assets/js/wow.min.js"></script>
+  <script src="assets/js/countdown.js"></script>
+  <script>
+    $("#clock")
+      .countdown("2020/01/01", function (event) {
+        $(this).html(
+          event.strftime('' +
+            '<div><span>%W</span><span>Weeks</span></div>' +
+            '<div class="" ><span>%D</span><span>Days</span></div>' +
+            '<div class=" "  ><span>%H</span><span>Hours</span></div>' +
+            '<div class=" "  ><span>%M</span><span>Minutes</span></div>' +
+            '<div class="s" ><span>%S</span><span>Seconds</span></div>')
+        );
+      });
+
+    $(document).ready(function () {
+      $(".share").click(function () {
+        $(".center").fadeOut(100);
+        $(".social").fadeIn(500);
+        $(".close-1").fadeIn(100);
+        $(".msg").fadeOut(100);
+        $(".share").fadeOut(100);
+        $(".logo").fadeOut(100);
+
+
+      });
+      $(".close-1").click(function () {
+        $(".social").fadeOut(100);
+        $(".center").fadeIn(500);
+        $(".msg").fadeIn(100);
+        $(".share").fadeIn(100);
+        $(".logo").fadeIn(200);
+
+      });
+      $(".msg").click(function () {
+        $(".social").fadeOut(100);
+        $(".center").fadeOut(500);
+        $(".msg").fadeOut(100);
+        $(".share").fadeOut(100);
+        $(".contact").fadeIn(500);
+        $(".close-2").fadeIn(500);
+        $(".logo").fadeOut(100);
+
+      });
+      $(".close-2").click(function () {
+        $(".contact").fadeOut(100);
+        $(".center").fadeIn(500);
+        $(".msg").fadeIn(100);
+        $(".share").fadeIn(100);
+        $(".close-2").fadeOut(100);
+        $(".logo").fadeIn(200);
+
+      });
+
+    });
+    new WOW().init();
+  </script>
+</body>
+
+</html>
